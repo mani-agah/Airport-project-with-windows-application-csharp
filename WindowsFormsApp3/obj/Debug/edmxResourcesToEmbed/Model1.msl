@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WorldSkillsAirPlanDbModelStoreContainer" CdmEntityContainer="WorldSkillsAirPlanDbEntities">
+    <EntitySetMapping Name="AirPlanTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.AirPlanTbl">
+        <MappingFragment StoreEntitySet="AirPlanTbl">
+          <ScalarProperty Name="AirPlanId" ColumnName="AirPlanId" />
+          <ScalarProperty Name="AirPlanName" ColumnName="AirPlanName" />
+          <ScalarProperty Name="AirPlanCompany" ColumnName="AirPlanCompany" />
+          <ScalarProperty Name="AirPlanCapacity" ColumnName="AirPlanCapacity" />
+          <ScalarProperty Name="AirPlanCreatedDateTime" ColumnName="AirPlanCreatedDateTime" />
+          <ScalarProperty Name="AirPlanCode" ColumnName="AirPlanCode" />
+          <ScalarProperty Name="AirPlanPhoto" ColumnName="AirPlanPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginLogTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.LoginLogTbl">
+        <MappingFragment StoreEntitySet="LoginLogTbl">
+          <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+          <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+          <ScalarProperty Name="LoginDateTimeUser" ColumnName="LoginDateTimeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogOutTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.LogOutTbl">
+        <MappingFragment StoreEntitySet="LogOutTbl">
+          <ScalarProperty Name="LogOutId" ColumnName="LogOutId" />
+          <ScalarProperty Name="LogOutDateTime" ColumnName="LogOutDateTime" />
+          <ScalarProperty Name="LogOutUser" ColumnName="LogOutUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainUserTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.MainUserTbl">
+        <MappingFragment StoreEntitySet="MainUserTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="employmentDate" ColumnName="employmentDate" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Rull" ColumnName="Rull" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RullTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.RullTbl">
+        <MappingFragment StoreEntitySet="RullTbl">
+          <ScalarProperty Name="RullId" ColumnName="RullId" />
+          <ScalarProperty Name="RullLabel" ColumnName="RullLabel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersTbls">
+      <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.UsersTbl">
+        <MappingFragment StoreEntitySet="UsersTbl">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserRull" ColumnName="UserRull" />
+          <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+          <ScalarProperty Name="UserNameForProgram" ColumnName="UserNameForProgram" />
+          <ScalarProperty Name="UserBirhtday" ColumnName="UserBirhtday" />
+          <ScalarProperty Name="UserPhoto" ColumnName="UserPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

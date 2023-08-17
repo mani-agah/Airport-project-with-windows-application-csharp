@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WorldSkillsAirPlanDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AirPlanTbl">
+          <Key>
+            <PropertyRef Name="AirPlanId" />
+          </Key>
+          <Property Name="AirPlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirPlanName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AirPlanCompany" Type="int" Nullable="false" />
+          <Property Name="AirPlanCapacity" Type="int" Nullable="false" />
+          <Property Name="AirPlanCreatedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="AirPlanCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AirPlanPhoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginLogTbl">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginDateTime" Type="datetime" Nullable="false" />
+          <Property Name="LoginDateTimeUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogOutTbl">
+          <Key>
+            <PropertyRef Name="LogOutId" />
+          </Key>
+          <Property Name="LogOutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogOutDateTime" Type="datetime" Nullable="false" />
+          <Property Name="LogOutUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MainUserTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="employmentDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rull" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RullTbl">
+          <Key>
+            <PropertyRef Name="RullId" />
+          </Key>
+          <Property Name="RullId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RullLabel" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersTbl">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassword" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserRull" Type="int" Nullable="false" />
+          <Property Name="UserStatus" Type="int" Nullable="false" />
+          <Property Name="UserNameForProgram" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserBirhtday" Type="datetime" Nullable="false" />
+          <Property Name="UserPhoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WorldSkillsAirPlanDbModelStoreContainer">
+          <EntitySet Name="AirPlanTbl" EntityType="Self.AirPlanTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginLogTbl" EntityType="Self.LoginLogTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogOutTbl" EntityType="Self.LogOutTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainUserTbl" EntityType="Self.MainUserTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RullTbl" EntityType="Self.RullTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersTbl" EntityType="Self.UsersTbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WorldSkillsAirPlanDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AirPlanTbl">
+          <Key>
+            <PropertyRef Name="AirPlanId" />
+          </Key>
+          <Property Name="AirPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirPlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AirPlanCompany" Type="Int32" Nullable="false" />
+          <Property Name="AirPlanCapacity" Type="Int32" Nullable="false" />
+          <Property Name="AirPlanCreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AirPlanCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AirPlanPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginLogTbl">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginDateTimeUser" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogOutTbl">
+          <Key>
+            <PropertyRef Name="LogOutId" />
+          </Key>
+          <Property Name="LogOutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogOutDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogOutUser" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MainUserTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="employmentDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rull" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RullTbl">
+          <Key>
+            <PropertyRef Name="RullId" />
+          </Key>
+          <Property Name="RullId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RullLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersTbl">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserRull" Type="Int32" Nullable="false" />
+          <Property Name="UserStatus" Type="Int32" Nullable="false" />
+          <Property Name="UserNameForProgram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserBirhtday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WorldSkillsAirPlanDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AirPlanTbls" EntityType="Self.AirPlanTbl" />
+          <EntitySet Name="LoginLogTbls" EntityType="Self.LoginLogTbl" />
+          <EntitySet Name="LogOutTbls" EntityType="Self.LogOutTbl" />
+          <EntitySet Name="MainUserTbls" EntityType="Self.MainUserTbl" />
+          <EntitySet Name="RullTbls" EntityType="Self.RullTbl" />
+          <EntitySet Name="UsersTbls" EntityType="Self.UsersTbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WorldSkillsAirPlanDbModelStoreContainer" CdmEntityContainer="WorldSkillsAirPlanDbEntities">
+          <EntitySetMapping Name="AirPlanTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.AirPlanTbl">
+              <MappingFragment StoreEntitySet="AirPlanTbl">
+                <ScalarProperty Name="AirPlanId" ColumnName="AirPlanId" />
+                <ScalarProperty Name="AirPlanName" ColumnName="AirPlanName" />
+                <ScalarProperty Name="AirPlanCompany" ColumnName="AirPlanCompany" />
+                <ScalarProperty Name="AirPlanCapacity" ColumnName="AirPlanCapacity" />
+                <ScalarProperty Name="AirPlanCreatedDateTime" ColumnName="AirPlanCreatedDateTime" />
+                <ScalarProperty Name="AirPlanCode" ColumnName="AirPlanCode" />
+                <ScalarProperty Name="AirPlanPhoto" ColumnName="AirPlanPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginLogTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.LoginLogTbl">
+              <MappingFragment StoreEntitySet="LoginLogTbl">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+                <ScalarProperty Name="LoginDateTimeUser" ColumnName="LoginDateTimeUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogOutTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.LogOutTbl">
+              <MappingFragment StoreEntitySet="LogOutTbl">
+                <ScalarProperty Name="LogOutId" ColumnName="LogOutId" />
+                <ScalarProperty Name="LogOutDateTime" ColumnName="LogOutDateTime" />
+                <ScalarProperty Name="LogOutUser" ColumnName="LogOutUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainUserTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.MainUserTbl">
+              <MappingFragment StoreEntitySet="MainUserTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="employmentDate" ColumnName="employmentDate" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Rull" ColumnName="Rull" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RullTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.RullTbl">
+              <MappingFragment StoreEntitySet="RullTbl">
+                <ScalarProperty Name="RullId" ColumnName="RullId" />
+                <ScalarProperty Name="RullLabel" ColumnName="RullLabel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersTbls">
+            <EntityTypeMapping TypeName="WorldSkillsAirPlanDbModel.UsersTbl">
+              <MappingFragment StoreEntitySet="UsersTbl">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserRull" ColumnName="UserRull" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="UserNameForProgram" ColumnName="UserNameForProgram" />
+                <ScalarProperty Name="UserBirhtday" ColumnName="UserBirhtday" />
+                <ScalarProperty Name="UserPhoto" ColumnName="UserPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

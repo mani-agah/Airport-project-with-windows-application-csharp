@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WorldSkillsAirPlanDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AirPlanTbl">
+    <Key>
+      <PropertyRef Name="AirPlanId" />
+    </Key>
+    <Property Name="AirPlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AirPlanName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AirPlanCompany" Type="int" Nullable="false" />
+    <Property Name="AirPlanCapacity" Type="int" Nullable="false" />
+    <Property Name="AirPlanCreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="AirPlanCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AirPlanPhoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginLogTbl">
+    <Key>
+      <PropertyRef Name="LoginId" />
+    </Key>
+    <Property Name="LoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginDateTime" Type="datetime" Nullable="false" />
+    <Property Name="LoginDateTimeUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogOutTbl">
+    <Key>
+      <PropertyRef Name="LogOutId" />
+    </Key>
+    <Property Name="LogOutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogOutDateTime" Type="datetime" Nullable="false" />
+    <Property Name="LogOutUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainUserTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NationalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="employmentDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rull" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RullTbl">
+    <Key>
+      <PropertyRef Name="RullId" />
+    </Key>
+    <Property Name="RullId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RullLabel" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersTbl">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserRull" Type="int" Nullable="false" />
+    <Property Name="UserStatus" Type="int" Nullable="false" />
+    <Property Name="UserNameForProgram" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserBirhtday" Type="datetime" Nullable="false" />
+    <Property Name="UserPhoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WorldSkillsAirPlanDbModelStoreContainer">
+    <EntitySet Name="AirPlanTbl" EntityType="Self.AirPlanTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginLogTbl" EntityType="Self.LoginLogTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogOutTbl" EntityType="Self.LogOutTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainUserTbl" EntityType="Self.MainUserTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RullTbl" EntityType="Self.RullTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersTbl" EntityType="Self.UsersTbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WorldSkillsAirPlanDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AirPlanTbl">
+    <Key>
+      <PropertyRef Name="AirPlanId" />
+    </Key>
+    <Property Name="AirPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AirPlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AirPlanCompany" Type="Int32" Nullable="false" />
+    <Property Name="AirPlanCapacity" Type="Int32" Nullable="false" />
+    <Property Name="AirPlanCreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AirPlanCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AirPlanPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginLogTbl">
+    <Key>
+      <PropertyRef Name="LoginId" />
+    </Key>
+    <Property Name="LoginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginDateTimeUser" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogOutTbl">
+    <Key>
+      <PropertyRef Name="LogOutId" />
+    </Key>
+    <Property Name="LogOutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogOutDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogOutUser" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainUserTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="employmentDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rull" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RullTbl">
+    <Key>
+      <PropertyRef Name="RullId" />
+    </Key>
+    <Property Name="RullId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RullLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersTbl">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserRull" Type="Int32" Nullable="false" />
+    <Property Name="UserStatus" Type="Int32" Nullable="false" />
+    <Property Name="UserNameForProgram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserBirhtday" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WorldSkillsAirPlanDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AirPlanTbls" EntityType="Self.AirPlanTbl" />
+    <EntitySet Name="LoginLogTbls" EntityType="Self.LoginLogTbl" />
+    <EntitySet Name="LogOutTbls" EntityType="Self.LogOutTbl" />
+    <EntitySet Name="MainUserTbls" EntityType="Self.MainUserTbl" />
+    <EntitySet Name="RullTbls" EntityType="Self.RullTbl" />
+    <EntitySet Name="UsersTbls" EntityType="Self.UsersTbl" />
+  </EntityContainer>
+</Schema>
